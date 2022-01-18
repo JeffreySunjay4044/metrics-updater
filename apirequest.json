@@ -1,0 +1,19 @@
+
+curl -X POST "https://api.datadoghq.com/api/v1/series" \
+-H "Content-Type: text/json" \
+-H "DD-API-KEY: ${DD_API_KEY}" \
+-d @- << EOF
+{
+"series": [
+{
+"metric": "system.load.1",
+"points": [
+[
+"${NOW}",
+"1234.5"
+]
+]
+}
+]
+}
+EOF
